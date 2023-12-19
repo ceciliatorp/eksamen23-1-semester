@@ -20,7 +20,7 @@ header{
 .logo {
     height: 7rem;
     width: auto;
-    z-index: 100;
+    z-index: 1000;
     position: fixed; /* Fixed for at få loget til at følge siden */
 }
 
@@ -409,7 +409,7 @@ animation delay på + left % sådan de spredes over siden  */
 
 .foto1 {
     height: auto;
-    width: 18rem;
+    width: 19rem;
 }
     
 
@@ -417,7 +417,7 @@ animation delay på + left % sådan de spredes over siden  */
     height: auto;
     width: 30rem;
     z-index: 100;
-    padding: 4rem;
+    padding-left: 7%;
     place-items: center;
     position: absolute;
     animation: slideUp 0.75s ease-out;
@@ -643,6 +643,21 @@ animation delay på + left % sådan de spredes over siden  */
     text-transform:uppercase;
 }
 
+@media (max-width: 768px) {
+    .alledaaser {
+        width: auto;
+        height: 20em;
+    }
+    .bund h1 {
+        font-size: 2em;
+    }
+
+    .bund h3 {
+        font-size: 1em;
+    }
+
+}
+
 /* Responsivt design til telefon med kun en kolonne */
 
   @media (max-width: 768px) { 
@@ -651,89 +666,71 @@ animation delay på + left % sådan de spredes over siden  */
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6,1fr);
         background-color: #b4c2e5;
-        padding: 0.5% 10%;
+        padding: 3% 5%;
     }
 
     .lemon1 {
         grid-row-start: 1;
         grid-column:1;
         width: 100%;
-
+        height: fit-content;
     }
     
     .lemon1 img {
         height: auto;
         width: 100%;
-        padding: 2% 2%;
         justify-content: center;
         align-items: center;
-        grid-column:1;
     }
     
     .lemon2 {
-        background-color: #b4c2e5;
         grid-row-start: 2;
-        color: #137c59;
-        height: auto;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 2% 2%;
-        grid-column:1;
+        grid-column: 1;
+        width: 80%;
+        height: fit-content;
     }
-
     .raspberry2 {
-        background-color: #b4c2e5;
         grid-row-start: 4;
-        color: #137c59;
-        height: auto;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 2% 2%;
-        grid-column:1;
+        grid-column: 1;
+        width: 80%;
+        height: fit-content;
     }
     
     .raspberry1 img {
         height: auto;
         width: 100%;
-        padding: 2% 2%;
         justify-content: center;
         align-items: center;
         grid-column:1;
     }
     
     .raspberry1 {
-        background-color: #b4c2e5;
         grid-row-start: 3;
         grid-column:1;
+        width: 100%;
+        height: fit-content;
     }
     
     .original1 {
-        background-color: #b4c2e5;
         grid-row-start: 5;
         grid-column:1;
+        width: 100%;
+        height: fit-content;
     }
     
     .original1 img {
         height: auto;
         width: 100%;
-        padding: 2% 2%;
         justify-content: center;
         align-items: center;
         grid-column:1;
     }
     
     .original2 {
-        background-color: #b4c2e5;
         grid-row-start: 6;
-        color: #137c59;
-        height: auto;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 2% 2%;
         grid-column:1;
+        width: 80%;
+        height: fit-content;
     }
     
   }
