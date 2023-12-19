@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cecilia Torp Hansen">
+
+    <!-- SEO -->
+    <meta name="keywords" content="alkoholfri øl, Trøjborg bryggeri, nye alkoholfri øl, juleøl">
+    <meta name="description" content="Køb vores øl her - alkoholfri juleøl 2023, alkoholfri øl">
+
+    <!-- Font "Rethink Sans" Designed by Hans Thiessen, Colophon Foundry, Jonny Pinhorn -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+
+     <!-- Link til animationer. Animate.css is licensed under the Hippocratic License. --> 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+
+    <!-- Icons Hosted by Front Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Nederst har jeg linket til eget stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Titel på side + favicon-->
+    <title>Trøjborg Bryg - Shop </title>
+    <link rel="icon" href="image/favicon.png">
+
+</head>
+
+<!-- I min body bruger jeg semantiske tags -->
+
+<!-- Jeg har designet ud fra Mobile First, men anvender CSS grid til
+     at gøre mit design responsivt. Det ses i mit CSS style sheet-->
+
+<body>
+
+    <!-- I min header er mit logo og search bar -->
+
+    <header>
+
+        <img class="logo" src="image/logoeksamen-svg.svg" alt="Trøjborg Brygs logo">
+         
+    <!-- Nav bar med lidt java script for luk/åben funktion. Java delen ses i bunden af denne index fil-->
+    </header>
+    
+    <nav>
+
+        <ul class="sidebar">
+            <li onclick=hideSidebar()> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#">Shop<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"</svg></a></li>
+            <li> <a href="index.html">Nyheder!</a></li>
+            <li> <a href="smagsvarianter.html">Smagsvarianter</a></li>
+            <li> <a href="#">Om os</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Forhandlere</a></li>
+                    <li><a href="voreshistorie.html">Vores historie</a></li>
+                    <li><a href="bryggeprocessen.html">Hvordan brygger vi?</a></li>
+                </ul>
+            </li>
+            <li> <a href="#">Kontakt</a>
+                <ul class="dropdown-content">
+                    <li> <a href="#">Erhvervs kunde</a></li>
+                    <li> <a href="#">Privat kunde</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li class="hideOnMobile"> <a href="index.html">Nyheder!</a></li>
+            <li class="hideOnMobile"> <a href="smagsvarianter.html">Smagsvarianter</a></li>
+            <li class="hideOnMobile">
+                <a href="#">Om os</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Forhandlere</a></li>
+                    <li><a href="voreshistorie.html">Vores historie</a></li>
+                    <li><a href="bryggeprocessen.html">Hvordan brygger vi?</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"> 
+                <a href="#">Kontakt</a>
+                <ul class="dropdown-content">
+                    <li> <a href="#">Erhvervs kunde</a></li>
+                    <li> <a href="#">Privat kunde</a></li>
+                </ul>
+            </li>
+            <li class="hideOnMobile"><a href="#">Shop<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"</svg></a></li>
+
+            <!-- De tre streger til burger menu -->
+
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"></path></svg></a></li>
+    </nav>
+
+    <section class="shoppingcart">
+
+            <div class="shop"> 
+            <p>Din indkøbskurv er tom</p>
+            <a href="smagsvarianter.html" class="button">Se vores smagsvarianter her!</a>
+            </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="social">
+            <a href="#"> <i class="fa fa-instagram"></i></a>
+            <a href="#"> <i class="fa fa-twitter"></i></a>
+            <a href="#"> <i class="fa fa-facebook"></i></a>
+        </div>
+        
+        <ul>
+            <li><a href="#">Erhvervs Kunde</a></li>
+            <li><a href="smage.html">Hvordan brygger vi alkoholfrit?</a></li>
+            <li><a href="#">Kontakt Os</a></li>
+        </ul>
+        <p class="copyright">Trøjborg Bryg @ 2023</p>
+        <p>Tordenskjoldsgade 8200 Aarhus</p>
+        <p> Cecilia Torp Hansen </p>
+    </footer>
+
+
+
+<!-- Her linker jeg til javascript for at få min nav bar til at virke  -->
+
+<script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display ='flex'
+    }
+    function hideSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display ='none'
+    }
+</script>
+    
+</body>
+</html>

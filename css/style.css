@@ -1,0 +1,829 @@
+* {padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Rethink Sans;
+}
+/* Styling af header + logo */
+
+header{
+    display: flex;
+    background-color: #e1d9c9;
+    height: 7rem;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.logo {
+    height: 7rem;
+    width: auto;
+    z-index: 100;
+    position: fixed; /* Fixed for at få loget til at følge siden */
+}
+
+/* Styling af nav bar */
+  
+    nav {
+        background-color: #e1d9c9;
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav li {
+        height: 50px;
+        position: relative;
+    }
+
+    nav a {
+        height: 100%;
+        padding: 0 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color:#312780;
+        fill: #312780;
+    }
+
+    nav a:hover {
+        color: #ee81bc;
+    }
+
+
+    /* Styling af dropdown menu  */
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%; /* Position dropdown below the parent li */
+        z-index: 1000;
+    }
+
+    .dropdown-content li {
+        background: #e1d9c9;
+        display: block;
+        position: relative;
+        padding: 20px;
+        height: fit-content;
+
+    }
+
+    .dropdown-content li a {
+       text-align: center;
+       display: block;
+       padding: 10px;
+       font-size: 0.75em;
+    }
+
+    nav li:hover .dropdown-content {
+        display: block;
+    }
+
+
+    /* Styling af sidebar */
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        z-index: 999;
+        background-color: #e1d9c9;
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .sidebar li {
+        width: 100%;
+    }
+
+    .sidebar a {
+        width: 100%;
+    }
+
+
+/* Gemmer sidebar kanppen på store skærme  */
+    .menu-button {
+        display: none;
+    }
+
+/* Gør nav bar responsive  */
+
+@media (max-width: 768px){
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+
+    nav ul {
+        justify-content: right;
+    }
+}
+
+/* Gør sidebaren fylder hele skærmen på små telefoner */
+@media (max-width:400px) {
+    .sidebar{
+        width: 100%;
+    }
+}
+
+/* Styling af footer */
+
+.footer {
+background-color: #ff8d43;
+width: 100%;
+height: 100%;
+position: relative;
+margin: 0;
+padding-top: 0;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer, .social {
+    text-align: center;
+    padding: 25px;
+    color: #312780;
+}
+.social a {
+    font-size: 24px;
+    color: inherit;
+    border: 2px solid #312780;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+.social a:hover {
+    opacity: 0.9;
+    color: #e0edff;
+}
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer ul li a:hover {
+    opacity: 1;
+    color: #e0edff;
+}
+.footer, .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #312780;
+}
+
+.footer {
+    margin: 0;
+    padding-top: 0;
+}
+
+
+
+
+
+
+/* Styling af forsiden - NYHEDER  */
+
+/* Styling af section */
+
+.section-nyheder {
+    background-color: #b4c2e5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tekst-start-nyheder {
+    padding: 2% 10%;
+    color: #312780;
+    text-align: center;
+}
+
+.tekst-start-nyheder h2 {
+    font-size: 2.5em;
+    margin: 3% 10%;
+}
+
+.tekst-start-nyheder p {
+    font-size: 1.5em;
+    padding-bottom: 2%;
+}
+
+
+
+
+/* Styling af snefnug + animation */
+
+/* Det jeg har gjort er at lave en @keyframe som snefnugene skal følge og så har jeg sat forskellig 
+animation delay på + left % sådan de spredes over siden  */
+
+.section-nyheder {
+    position:relative;
+    width: 100%;
+    height: 60%;
+    overflow:hidden;
+}
+
+.set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.set div {
+    position: absolute;
+    display: block;
+}
+
+.set div img {
+    height: auto;
+    width: 4rem;
+}
+
+.set div:nth-child(1){
+    left: 20%;
+    animation: animate 15s linear infinite;
+    animation-delay: -7s;
+}
+
+.set div:nth-child(2) {
+    left: 30%;
+    animation: animate 15s linear infinite;
+    animation-delay: -15s;
+}
+
+.set div:nth-child(3) {
+    left: 40%;
+    animation: animate 15s linear infinite;
+    animation-delay: -9s;
+}
+
+.set div:nth-child(4) {
+    left: 50%;
+    animation: animate 15s linear infinite;
+    animation-delay: -20s;
+}
+
+.set div:nth-child(5) {
+    left: 60%;
+    animation: animate 15s linear infinite;
+    animation-delay: -30s;
+}
+
+.set div:nth-child(6) {
+    left: 80%;
+    animation: animate 15s linear infinite;
+    animation-delay: -16s;
+}
+
+.set div:nth-child(7) {
+    left: 55%;
+    animation: animate 15s linear infinite;
+    animation-delay: -40s;
+}
+
+.set div:nth-child(8) {
+    left: 70%;
+    animation: animate 15s linear infinite;
+    animation-delay: -10s;
+}
+
+.set div:nth-child(9) {
+    left: 10%;
+    animation: animate 15s linear infinite;
+    animation-delay: -12s;
+}
+
+
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(-20px) rotate(45deg);
+    }
+
+    40% {
+        transform: translateX(-20px) rotate(90deg);
+    }
+
+    60% {
+        transform: translateX(20px) rotate(180deg);
+    }
+
+    80% {
+        transform: translateX(-20px) rotate(90deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-20px) rotate(90deg);
+    }
+}
+
+
+
+/* Styling af article */
+
+.article-nyheder {
+    background-color: #e1d9c9;
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* ved brug af grid, to kolonner*/
+    padding: 2% 5%;
+}
+
+/* Ændrer sådan billed + tekst er over/under hinanden */
+
+@media (max-width:620px) {
+    .article-nyheder{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+.article-nyheder h1 {
+    color: #137c59;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    padding: 2%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+.article-nyheder p {
+    color: black;
+    padding: 2%;
+    text-align: center;
+}   
+
+
+/* styling af øl på grøn figur */
+
+
+.juleolfoto {
+    display: grid;
+    place-items: center;
+    position: relative;
+   
+}
+
+.foto1 {
+    height: auto;
+    width: 18rem;
+}
+    
+
+.foto2 {
+    height: auto;
+    width: 30rem;
+    z-index: 100;
+    padding: 4rem;
+    place-items: center;
+    position: absolute;
+    animation: slideUp 0.75s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* Styling af Vores historie siden */
+
+.main-vores-historie {
+    background-color: #b4c2e5;
+}
+
+
+.article-historie{
+    padding: 4% 10%;
+    margin: 0 20px 0 20px;
+}
+
+/* styling af billedserien i toppen */
+
+.fotos-historie {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    background-color: #b4c2e5;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fotos-historie img {
+    width: auto;
+    height: 12rem;
+}
+
+.fotomobileversion {
+    display: none;
+}
+
+/* Responsiv, på tablet + telefon kun et foto */
+
+@media (max-width: 768px) {
+
+    .fotomobileversion img {
+        height: auto;
+        width: 100%;
+    }
+    .fotomobileversion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 100%
+    }
+}
+
+/* styling af tekst på historie siden */
+
+.article-historie h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #137c59;
+    font-size: 3em;
+    
+}
+
+.article-historie p {
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
+
+.article-historie h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #137c59;
+    font-size: 1.5em;
+}
+
+.article-historie h3{
+    margin-bottom: 1rem;
+}
+
+.vision {
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    color: #137c59;
+}
+
+.historie-malt-ol {
+    height: 30em;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* styling af Smagsvarianter */
+
+.smagsvarianter-main {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,auto);
+    background-color: #b4c2e5;
+    padding: 2% 10%;
+}
+
+.smagsvarianter-main figure {
+    background-color: #b4c2e5;
+}
+
+.lemon1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.lemon1 img {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lemon2 {
+    background-color: #b4c2e5;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    color: #137c59;
+    height: auto;
+    width: 30rem;
+    text-align: center;
+    padding: 2% 2%;
+    margin: 15% 5%;
+}
+
+.raspberry2 {
+    background-color: #b4c2e5;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    color: #137c59;
+    text-align: center;
+    padding: 2% 2%;
+    margin: 15% 5%;
+}
+
+.raspberry1 img {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.raspberry1 {
+    background-color: #b4c2e5;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    
+}
+
+.original1 {
+    background-color: #b4c2e5;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.original1 img {
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.original2 {
+    background-color: #b4c2e5;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    color: #137c59;
+    text-align: center;
+    padding: 2% 2%;
+    margin: 15% 5%;
+}
+
+
+.bund {
+    padding: 2% 10%;
+    background-color: #312780;
+    color: #ff8d43;
+}
+
+.bund h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+.alledaaser {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 30em;
+    background-color: #312780;
+}
+
+.bund h3{
+    text-align: center;
+    font-size: 2em;
+    text-transform:uppercase;
+}
+
+/* Responsivt design til telefon med kun en kolonne */
+
+  @media (max-width: 768px) { 
+    .smagsvarianter-main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,1fr);
+        background-color: #b4c2e5;
+        padding: 0.5% 10%;
+    }
+
+    .lemon1 {
+        grid-row-start: 1;
+        grid-column:1;
+        width: 100%;
+
+    }
+    
+    .lemon1 img {
+        height: auto;
+        width: 100%;
+        padding: 2% 2%;
+        justify-content: center;
+        align-items: center;
+        grid-column:1;
+    }
+    
+    .lemon2 {
+        background-color: #b4c2e5;
+        grid-row-start: 2;
+        color: #137c59;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 2% 2%;
+        grid-column:1;
+    }
+
+    .raspberry2 {
+        background-color: #b4c2e5;
+        grid-row-start: 4;
+        color: #137c59;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 2% 2%;
+        grid-column:1;
+    }
+    
+    .raspberry1 img {
+        height: auto;
+        width: 100%;
+        padding: 2% 2%;
+        justify-content: center;
+        align-items: center;
+        grid-column:1;
+    }
+    
+    .raspberry1 {
+        background-color: #b4c2e5;
+        grid-row-start: 3;
+        grid-column:1;
+    }
+    
+    .original1 {
+        background-color: #b4c2e5;
+        grid-row-start: 5;
+        grid-column:1;
+    }
+    
+    .original1 img {
+        height: auto;
+        width: 100%;
+        padding: 2% 2%;
+        justify-content: center;
+        align-items: center;
+        grid-column:1;
+    }
+    
+    .original2 {
+        background-color: #b4c2e5;
+        grid-row-start: 6;
+        color: #137c59;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 2% 2%;
+        grid-column:1;
+    }
+    
+  }
+
+/* Styling af Bryggeproces siden */
+
+
+.main-bryggeproces {
+    background-color: #b4c2e5;
+    padding: 2%;
+}
+
+.bryggeproces-infographic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.bryggeproces-foto {
+    height: auto;
+    width: 50%;
+}
+
+.article-bryggeproces h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 5%;
+    color: #137c59;
+    padding-top: 5%;
+    text-shadow: #312780;
+}
+
+.article-bryggeproces h2 {
+    text-align: center;
+    margin-bottom: 5%;
+    color: #312780;
+    text-align: center;
+}
+
+.article-bryggeproces h3 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #ee81bc;
+}
+
+.article-bryggeproces ul {
+    text-align: center;
+    list-style: none;
+}
+
+.article-bryggeproces p {
+    margin-bottom: 10px;
+}
+
+
+/* Styling af indkøbskurv  */
+
+.shoppingcart {
+    background-color: #b4c2e5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.shoppingcart p {
+    color: #312780;
+    font-size: 1em;
+    text-align: center;
+    padding: 10% 10%;
+}
+
+/* Basic button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #312780;
+    background-color: #ee81bc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect */
+  .button:hover {
+    background-color: #ff8d43;
+    color: #312780;
+  }
